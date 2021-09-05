@@ -65,3 +65,8 @@ setInterval(() => {
   seekBar.value = music.currentTime; // set range slide value to current time
   currentTime.innerHTML = formatTime(music.currentTime);
 }, 500); // update current time every 500ms
+
+// change event to jump in between song time
+seekBar.addEventListener("change", () => {
+  music.currentTime = seekBar.value;
+});
