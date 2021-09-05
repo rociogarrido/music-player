@@ -71,6 +71,13 @@ seekBar.addEventListener("change", () => {
   music.currentTime = seekBar.value;
 });
 
+// function to play music every time user click on forward or backward button
+const playMusic = () => {
+  music.play();
+  playBtn.classList.remove("pause");
+  disk.classList.add("play");
+};
+
 // forward and backward button
 forwardBtn.addEventListener("click", () => {
   if (currentMusic >= songs.length - 1) {
@@ -79,7 +86,7 @@ forwardBtn.addEventListener("click", () => {
     currentMusic++;
   }
   setMusic(currentMusic);
-  playBtn.click();
+  playMusic();
 });
 
 backwardBtn.addEventListener("click", () => {
@@ -89,5 +96,5 @@ backwardBtn.addEventListener("click", () => {
     currentMusic--;
   }
   setMusic(currentMusic);
-  playBtn.click();
+  playMusic();
 });
