@@ -86,3 +86,13 @@ body {
   height: 20px;
   box-shadow: -400px 0 0 400px #d5eebb;
 }
+
+.current-time,
+.song-duration {
+  font-size: 14px;
+}
+
+.song-duration {
+  position: absolute;
+  right: 0;
+}
