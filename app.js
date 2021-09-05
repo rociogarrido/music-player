@@ -23,17 +23,34 @@ playBtn.addEventListener("click", () => {
 
 const setMusic = (i) => {
   seekBar.value = 0; // set range slide value to 0;
-  let song = songs[i];
-  currentMusic = i;
-  music.src = song.path;
+  let song = songs[i]; // get song from songs array
+  currentMusic = i; // set current music index
+  music.src = song.path; // set music source
 
-  songName.innerHTML = song.name;
-  artistName.innerHTML = song.artist;
-  disk.style.backgroundImage = `url('${song.cover}')`;
+  songName.innerHTML = song.name; // set song name
+  artistName.innerHTML = song.artist; // set artist name
+  disk.style.backgroundImage = `url('${song.cover}')`; // set cover image
 
-  currentTime.innerHTML = "00:00";
+  currentTime.innerHTML = "00:00"; // set current time to 00:00
   setTimeout(() => {
-    seekBar.max = music.duration;
+    seekBar.max = music.duration; // set max value of range slide to duration of music
+    console.log(music.duration);
     musicDuration.innerHTML = formatTime(music.duration);
   }, 300);
+};
+
+setMusic(0);
+
+// formatting time in min and seconds format
+
+const formatTime = (time) => {
+  let min = Math.floor(time / 60);
+  if (min < 10) {
+    min = `0${min}`;
+  }
+  let sec = Math.floor(time % 60);
+  if (sec < 10) {
+    sec = `0${sec}`;
+  }
+  return `${min} : ${sec}`;
 };
