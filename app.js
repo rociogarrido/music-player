@@ -64,6 +64,9 @@ const formatTime = (time) => {
 setInterval(() => {
   seekBar.value = music.currentTime; // set range slide value to current time
   currentTime.innerHTML = formatTime(music.currentTime);
+  if (Math.floor(music.currentTime) == Math.floor(seekBar.max)) {
+    forwardBtn.click();
+  } // if current time is equal to max value of seek bar, then play next song
 }, 500); // update current time every 500ms
 
 // change event to jump in between song time
