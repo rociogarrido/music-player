@@ -70,3 +70,24 @@ setInterval(() => {
 seekBar.addEventListener("change", () => {
   music.currentTime = seekBar.value;
 });
+
+// forward and backward button
+forwardBtn.addEventListener("click", () => {
+  if (currentMusic >= songs.length - 1) {
+    currentMusic = 0;
+  } else {
+    currentMusic++;
+  }
+  setMusic(currentMusic);
+  playBtn.click();
+});
+
+backwardBtn.addEventListener("click", () => {
+  if (currentMusic <= 0) {
+    currentMusic = songs.length - 1;
+  } else {
+    currentMusic--;
+  }
+  setMusic(currentMusic);
+  playBtn.click();
+});
