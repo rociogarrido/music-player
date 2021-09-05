@@ -39,7 +39,7 @@ const setMusic = (i) => {
   currentTime.innerHTML = "00:00"; // set current time to 00:00
   setTimeout(() => {
     seekBar.max = music.duration; // set max value of range slide to duration of music
-    console.log(music.duration);
+    // console.log(music.duration);
     musicDuration.innerHTML = formatTime(music.duration);
   }, 300);
 };
@@ -59,3 +59,9 @@ const formatTime = (time) => {
   }
   return `${min} : ${sec}`;
 };
+
+// seek bar
+setInterval(() => {
+  seekBar.value = music.currentTime; // set range slide value to current time
+  currentTime.innerHTML = formatTime(music.currentTime);
+}, 500); // update current time every 500ms
