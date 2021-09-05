@@ -161,3 +161,15 @@ body {
     box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.4);
   }
 }
+
+.btn {
+  width: 40px;
+  height: 40px;
+  background: #d5eebb;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+}
